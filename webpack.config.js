@@ -7,6 +7,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // The path to the cesium source code
 const cesiumSource = 'node_modules/cesium/Source';
 const cesiumWorkers = '../Build/Cesium/Workers';
+const geoMappings = 'src/geoMappings';
+const images = 'src/images';
 
 module.exports = [{
     context: __dirname,
@@ -52,6 +54,8 @@ module.exports = [{
         new CopyWebpackPlugin([{from: path.join(cesiumSource, 'Assets'), to: 'Assets'}]),
         new CopyWebpackPlugin([{from: path.join(cesiumSource, 'Widgets'), to: 'Widgets'}]),
         new CopyWebpackPlugin([{from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty'}]),
+        new CopyWebpackPlugin([{from: path.join(geoMappings, ''), to: 'geoMappings'}]),
+        new CopyWebpackPlugin([{from: path.join(images, ''), to: 'images'}]),
         new webpack.DefinePlugin({
             // Define relative base path in cesium for loading assets
             CESIUM_BASE_URL: JSON.stringify('')

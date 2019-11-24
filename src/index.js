@@ -1,7 +1,7 @@
 require('cesium/Widgets/widgets.css');
 require('./css/main.css');
-require('./geoMappings');
-require('./images')
+// require('./geoMappings');
+// require('./images')
 var Cesium = require('cesium/Cesium');
 
 // Example app
@@ -56,3 +56,8 @@ function colorByDistance() {
 }
 
 colorByDistance();
+
+var promise = Cesium.GeoJsonDataSource.load('./geoMappings/power.geojson');
+promise.then(function(dataSource) {
+    console.log("Coming inside of this");
+});
