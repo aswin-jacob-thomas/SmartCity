@@ -1,6 +1,7 @@
 require('cesium/Widgets/widgets.css');
 require('./css/main.css');
-
+require('./geoMappings');
+require('./images')
 var Cesium = require('cesium/Cesium');
 
 // Example app
